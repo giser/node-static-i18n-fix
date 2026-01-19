@@ -1,4 +1,4 @@
-# node-static-i18n [![Build Status](https://travis-ci.org/claudetech/node-static-i18n.svg?branch=master)](https://travis-ci.org/claudetech/node-static-i18n)
+# node-static-i18n-fix [![Build Status](https://travis-ci.org/giser/node-static-i18n-fix.svg?branch=master)](https://travis-ci.org/giser/node-static-i18n-fix)
 
 A simple utility to translate static HTML files.
 
@@ -9,8 +9,10 @@ Supports JSON and YAML dictionaries.
 For global installation, needed for CLI uage, run
 
 ```sh
-$ npm install -g static-i18n
+$ npm install -g static-i18n-fix
 ```
+
+The CLI binary remains `static-i18n`.
 
 Note that you can also use this as a [Grunt plugin](https://github.com/claudetech/grunt-i18n-static) or a [gulp plugin](https://github.com/36web/gulp-static-i18n-html).
 
@@ -175,8 +177,8 @@ You can also interpolate text nodes by adding `data-t-interpolate` to the elemen
 
 Note: This library uses `{{ }}` for its own interpolation. Historically, if i18next
 used its default `{{ }}` delimiters, it could consume placeholders before
-static-i18n processed them. To avoid that conflict, when `data-t-interpolate` is
-present and i18next is still using the default delimiters, static-i18n bypasses
+static-i18n-fix processed them. To avoid that conflict, when `data-t-interpolate` is
+present and i18next is still using the default delimiters, static-i18n-fix bypasses
 i18next interpolation for that element so placeholders are preserved. If you need
 i18next interpolation in those strings, change the i18next delimiters (e.g. via
 `i18n.interpolation`) to avoid conflicts.
