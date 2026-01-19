@@ -1,6 +1,6 @@
 {
-  "name": "static-i18n",
-  "version": "0.2.10",
+  "name": "static-i18n-fix",
+  "version": "0.3.0",
   "description": "Utility to translate static HTML files.",
   "main": "lib/index.js",
   "bin": {
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/claudetech/node-static-i18n"
+    "url": "https://github.com/giser/node-static-i18n-fix"
   },
   "keywords": [
     "html",
@@ -22,9 +22,9 @@
   "author": "Daniel Perez",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/claudetech/node-static-i18n/issues"
+    "url": "https://github.com/giser/node-static-i18n-fix/issues"
   },
-  "homepage": "https://github.com/claudetech/node-static-i18n",
+  "homepage": "https://github.com/giser/node-static-i18n-fix",
   "devDependencies": {
     "eslint": "^4.17.0",
     "expect.js": "^0.3.1",

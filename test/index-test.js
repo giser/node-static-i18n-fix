@@ -75,6 +75,16 @@ describe('processor', function () {
       expect($('input').attr('data-attr-t-interpolate')).to.be(undefined);
     });
 
+    it('should interpolate data-t content', async function () {
+      options = _.merge({}, options, { locales: ['en'] });
+      const input =
+        '<p data-t data-t-interpolate>Visit our {{foo.bar}} page for more info.</p>';
+      const results = await staticI18n.process(input, options);
+      const $ = cheerio.load(results.en);
+      expect($('p').text()).to.be('Visit our bar page for more info.');
+      expect($('p').attr('data-t-interpolate')).to.be(undefined);
+    });
+
     it('should remove interpolation related attributes', async function () {
       options = _.merge({}, options, { locales: ['en'] });
 

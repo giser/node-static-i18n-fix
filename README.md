@@ -167,6 +167,20 @@ Will generate:
 </html>
 ```
 
+You can also interpolate text nodes by adding `data-t-interpolate` to the element:
+
+```html
+<p data-t data-t-interpolate>Visit our {{foo.bar}} page for more info.</p>
+```
+
+Note: This library uses `{{ }}` for its own interpolation. Historically, if i18next
+used its default `{{ }}` delimiters, it could consume placeholders before
+static-i18n processed them. To avoid that conflict, when `data-t-interpolate` is
+present and i18next is still using the default delimiters, static-i18n bypasses
+i18next interpolation for that element so placeholders are preserved. If you need
+i18next interpolation in those strings, change the i18next delimiters (e.g. via
+`i18n.interpolation`) to avoid conflicts.
+
 ## Configuration
 
 This tool has several configuration options to adapt to most common use cases.
@@ -179,6 +193,7 @@ static-i18n --attr-selector my-attr-t ...
 
 * `selector` (default: `[data-t]`): The selector to look for elements to translate. If it is an attribute, the attribute content is used as the key when non empty, otherwise the text of the element is used.
 * `attrSelector` (default: `[data-attr-t]`): The selector to look for elements
+* `interpolateSelector` (default: `[data-t-interpolate]`): The selector that should be applied to elements to indicate that interpolation should be performed on the element text
 * `attrInterpolateSelector` (default: `[data-attr-t-interpolate]`): The selector that should be applied to elements to indicate that interpolation should be performed for the custom attributes on that element
 * `xml` (default: `false`): If `true`, enables XML mode for https://github.com/fb55/htmlparser2 which avoids breaking self-closing tags
 * `attrSuffix` (default: `-t`): Suffix for attr to translate. `value-t` will be translated and mapped to `value`.
